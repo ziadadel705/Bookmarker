@@ -1,0 +1,133 @@
+
+body {
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+::selection {
+  background-color: #6A1E55;
+  color: #fff;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #1A1A1D;
+}
+
+main h1 {
+  font-size: 50px;
+  font-family: "Pacifico", cursive;
+  color: #fff;
+  isolation: isolate;
+}
+
+main h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 10px;
+  background-color: #6A1E55;
+  transition: height 350ms;
+  z-index: -1;
+}
+
+main h1:hover::before {
+  height: 50%;
+}
+
+.bookmark-body {
+  border-width: 2px 0 2px 0;
+  border-style: inset;
+  border-color: #fff;
+}
+
+.bookmark-body h2 {
+    font-family: "Poppins", serif;
+    font-size: 25px;
+    color: #fff;
+}
+
+.btn-submit {
+    font-family: "Poppins", serif;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6A1E55;
+  --bs-btn-border-color: #6A1E55;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6A1E55;
+  --bs-btn-hover-border-color: #6A1E55;
+}
+
+.btn-submit:hover{
+    box-shadow: -1px 0px 74px -8px rgba(166,77,121,1);
+}
+
+.btn-visit {
+    font-family: "Poppins", serif;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #9eb23b;
+  --bs-btn-border-color: #9eb23b;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #8a9e23;
+  --bs-btn-hover-border-color: #6e8018;
+}
+
+.btn-delete {
+    font-family: "Poppins", serif;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #eb1d36;
+  --bs-btn-border-color: #eb1d36;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d30820;
+  --bs-btn-hover-border-color: #ba081d;
+}
+
+table {
+  vertical-align: middle !important;
+  font-family: "Poppins", serif;
+}
+
+.url-box{
+  background-color: #0007;
+}
+
+.box-conent {
+  width: 500px;
+  z-index: 10;
+}
+
+.box-conent p {
+  font-family: "Bree Serif", serif;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #352e28;
+}
+
+.rules li {
+  font-size: 18px;
+  padding-top: 10px;
+}
+.rules i {
+  color: #bb4120;
+}
+
+.circles span {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.site-label{
+    color: #fff;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+}
+.site-url{
+    color: #fff;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+}
