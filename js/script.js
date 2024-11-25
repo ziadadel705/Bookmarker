@@ -1,18 +1,19 @@
-// Declartions
+// Necsessary Declaration
 var bookmarkName = document.querySelector("#bookmarkName");
 var bookmarkURL = document.querySelector("#bookmarkURL");
 var submitButton = document.querySelector("#submitBtn");
 var tableBody = document.querySelector("#tableContent");
+var closeModalButton = document.querySelector("#closeBtn");
+var modalBox = document.querySelector(".box-info");
 let deleteButtons, visitButtons;
 let bookmarkList = [];
 
-// Using localStorage for bookmarks storing
+// Load from localStorage
 if (localStorage.getItem("bookmarksData")) {
   bookmarkList = JSON.parse(localStorage.getItem("bookmarksData"));
   bookmarkList.forEach((_, index) => renderBookmark(index));
 }
 
-// Function to Render a Bookmark
 function renderBookmark(index) {
   var bookmark = bookmarkList[index];
   var urlPrefixPattern = /^https?:\/\//;
@@ -42,7 +43,6 @@ function renderBookmark(index) {
   updateButtonListeners();
 }
 
-// Update Event Listeners for Buttons
 function updateButtonListeners() {
   deleteButtons = document.querySelectorAll(".btn-delete");
   deleteButtons.forEach((btn) =>
@@ -55,10 +55,15 @@ function updateButtonListeners() {
   );
 }
 
-// Reset fields
+// Clear Input Fields
 function resetInputs() {
   bookmarkName.value = "";
   bookmarkURL.value = "";
+}
+
+// Capitalize
+function capitalizeFirstLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 // Submit button
@@ -79,6 +84,8 @@ submitButton.addEventListener("click", () => {
 
     bookmarkName.classList.remove("is-valid");
     bookmarkURL.classList.remove("is-valid");
+  } else {
+    modalBox.classList.remove("d-none");
   }
 });
 
@@ -92,7 +99,7 @@ function removeBookmark(event) {
   localStorage.setItem("bookmarksData", JSON.stringify(bookmarkList));
 }
 
-// Visit 
+// Open 
 function openBookmark(event) {
   var indexToOpen = event.target.dataset.index;
   var bookmark = bookmarkList[indexToOpen];
